@@ -1,11 +1,15 @@
 import { Button, Card, CardActions, CardContent, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { addOrders } from '../redux/feature/CartSlice'
 
 
 const OrderSummary = () => {
     const cart = useSelector((state) => state.cart.cart)
     const [total, setTotal] = useState(0);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setTotal(
@@ -44,7 +48,10 @@ const OrderSummary = () => {
                 </CardContent>
 
                 <CardActions>
-                    <Button size="large" color="secondary">
+                    <Button size="large" color="secondary" onClick={() => dispatch(addOrders(cart))
+
+
+                    }>
                         BUY NOW ({cart.length})
                     </Button>
                 </CardActions>

@@ -30,7 +30,9 @@ const Product = ({ products }) => {
                                         $
                                         {p.price}
                                     </Typography>
-
+                                    <Typography variant="body2" color="text.secondary">
+                                        {p.description.length > 80 ? p.description.substr(0, 60) : p.description}
+                                    </Typography>
                                 </CardContent>
 
                                 <Button variant='contained' fullWidth onClick={() => dispatch(addToCart(p))}>Add To Cart</Button>

@@ -17,6 +17,7 @@ const NavBar = () => {
                     <Stack direction='row' spacing={2}>
                         <Button color='inherit' onClick={() => navigate('/')}>Home</Button>
                         <Button color='inherit' onClick={() => navigate('/cart')}>cart({cart.length})</Button>
+                        <Button color='inherit' onClick={() => navigate('/orders')}>orders</Button>
 
                     </Stack>
                 </Toolbar>
